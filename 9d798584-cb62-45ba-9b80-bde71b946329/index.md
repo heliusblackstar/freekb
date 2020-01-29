@@ -42,6 +42,9 @@ We do this by creating a folder using any UUID v4 (random) generation tool.  We 
 
 ## Private branch feature
 If your article will contain sensitive information you don't want to put into the main instance of FreeKB, use the [private branch feature](../7ad7eca0-9a4a-4ecd-95a6-b6eff8d0116c/index.md).
+
+## Privacy for your name or email address
+Before you `git commit`, [ensure your configuration name and email address are what you want to show in your commits](./05771c30-f03e-4dbb-8aee-ea0c57545626/index.md).
     
 
 ***
