@@ -11,7 +11,7 @@ The time difference should be exactly a certain number of hours different from t
 ## Root Cause
 The root cause of this is a flaw in how Windows handles calculates time as read from BIOS/EFI by default, versus how all other operating systems do.
 
-When a VM is cold booted, the VM's system clock is given the correct time in UTC.  Linux based systems will then apply a timezone offset to UTC to determine local time.  However, Windows does not use any timezone offset to determine local time--it will simply take the current system time (UTC) and displays it as local time.  It does this because it assumes the hardware clock will always be set to "local time", as this is what Windows sets it to, even though this is not a standard expectation for system clocks.
+When a VM is cold booted, the VM's system clock is given the correct time in UTC.  Linux based systems will then apply a timezone offset to UTC to determine local time.  However, Windows does not use any timezone offset to determine local time--it will simply take the current system time (UTC) and displays it as local time.  It does this because it assumes the hardware clock will always be set to "local time", as this is what Windows sets it to, even though this is not a standard expectation for hardware clocks.
 
 So for a cold-booted VM or dual-booted machine, Windows simply displays the current time as being the same as the system clock (UTC) instead of applying the configured timezone offset to determine the current time.   In theory if the system is configured to sync with an Internet time-source, Windows will realize this error and auto-correct, but in practice this does not always happen.
 
