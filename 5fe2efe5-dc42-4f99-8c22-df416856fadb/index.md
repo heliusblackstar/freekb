@@ -17,6 +17,9 @@ So for a cold-booted VM or dual-booted machine, Windows simply displays the curr
 
 This can disrupt authentication with other systems such as domain controllers.
 
+## Workaround
+Use the Windows UI to sync the time with an Internet timeserver after logging in.
+
 ## Permanent Fix
 
 Note, changing your timezone is not the correct answer.

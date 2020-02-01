@@ -19,7 +19,7 @@ The uptime command can show you server uptime in two formats.
         up 4 days, 2 hours, 14 minutes
     
 
-
+**If your article is more of a "Known Error" type page, you can model your article after [this page](../5fe2efe5-dc42-4f99-8c22-df416856fadb/index.md).**
 
 
 ***
