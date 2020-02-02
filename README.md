@@ -82,8 +82,8 @@ Want a page that links to each article and shows a title and summary?
 
 ### Suggested Markdown Editors/Viewers:
 The benefit of Markdown is that you can edit and view it via any plain-text editor, but to see images inline and for a better experience, you can try an editor with Markdown support:
-- [Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown) has Markdown preview and also supports full-text searching when you use Open Folder.
-- [Atom](https://atom.io/packages/markdown-preview) has Markdown preview.
+- [Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown) has built-in Markdown preview and also supports full-text searching when you use Open Folder.
+- [Atom](https://atom.io/packages/markdown-preview) has plugins to handle Markdown.
 - Online Markdown editors/viewers:
     - [StackEdit](https://stackedit.io/app#)
     - [Dillinger](https://dillinger.io/)
