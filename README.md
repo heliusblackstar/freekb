@@ -33,9 +33,8 @@ Rather than re-invent search, use the search tools already in your editor and OS
         2a945188-5721-472e-9efb-33dbae37a49e/index.md:# Backups with VRXA
 - Use grep to do a full-text keyword search against all article content:
 
-        $ grep --colour=ALWAYS --context=3 --exclude-dir=.git --recursive --ignore-case "linux"
+        $ grep --colour=ALWAYS --context=3 --exclude-dir=.git --recursive --ignore-case "Linux"
         *
-        9d798584-cb62-45ba-9b80-bde71b946329/index.md-https://www.markdownguide.org/basic-syntax/
         9d798584-cb62-45ba-9b80-bde71b946329/index.md-
         9d798584-cb62-45ba-9b80-bde71b946329/index.md-## Automated method for creating a new article
         9d798584-cb62-45ba-9b80-bde71b946329/index.md:- Bash/WSL/Linux:
