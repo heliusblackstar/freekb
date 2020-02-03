@@ -6,7 +6,7 @@ FreeKB is a knowledge base for technical topics.  All content is in the public d
 - **Simple** is better.
 - **Distributed** is better than centralized.  Centralized gets expensive to maintain (see Wikipedia's recurring donation requests).  Currently FreeKB is managed & distributed via Git, but copies could also be distributed via BitTorrent, USB sticks, etc.
 - **Plain-text** is better than a database or an app.
-- Markdown syntax gives us plain-text with rich-text features.
+- Markdown syntax (specifically CommonMark) gives us plain-text with rich-text features.
 - **Portable**  is important.  **Files in a folder on your own computer are better than a server** loaded up with a complex network of web libraries, interpreters, frameworks, and custom packages that will require maintenance to keep running and accessible.
 - Everyone should be able to use the tools of their own choice to read and modify the KB, though we will all follow certain style and structure conventions.
 - **Powerful search is already in your OS and editor/IDE**, no need to re-invent search tools.
@@ -81,12 +81,9 @@ Want a page that links to each article and shows a title and summary?
 [See this article.](0922a119-067c-4b34-95ea-0e8866aa4467/index.md)
 
 ### Suggested Markdown Editors/Viewers:
-The benefit of Markdown is that you can edit and view it via any plain-text editor, but to see images inline and for a better experience, you can try an editor with Markdown support:
-- [Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown) has built-in Markdown preview and also supports full-text searching when you use Open Folder.
-- [Atom](https://atom.io/packages/markdown-preview) has plugins to handle Markdown.
-- Online Markdown editors/viewers:
-    - [StackEdit](https://stackedit.io/app#)
-    - [Dillinger](https://dillinger.io/)
+The benefit of Markdown is that you can edit and view it via any plain-text editor, but to see images inline and for a better experience, you can try an editor with CommonMark Markdown support:
+- [Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown) is excellent, has built-in Preview and also supports full-text searching when you use Open Folder.
+- [Other editors are listed here.](https://github.com/commonmark/commonmark-spec/wiki/Applications-supporting-CommonMark)
 
 ## Contributing
 All content in the knowledgebase is dedicated to the public domain via [The Creative Commons CC0, stored in LICENSE.md](LICENSE.md).  Please review LICENSE.md before contributing any content.

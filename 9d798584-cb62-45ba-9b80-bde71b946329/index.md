@@ -5,10 +5,8 @@ New articles are stored as "index.md" in a folder (named simply with a UUID).
 The article template stored under 4b857b00-8bd4-4606-9ed6-be6f751ddfe7 should be copied to your UUID folder and used as a starting point for your article.
 
 ## Style Rules
-- Only use John Gruber's original variant of Markdown.
-    - The original Markdown is normatively described at (https://daringfireball.net/projects/markdown/syntax), however, you may find the quick reference [Basic Markdown page at markdownguide.org easier to use.](https://www.markdownguide.org/basic-syntax/)  Everything on the Basic syntax page is Original Markdown.  Stick to what you see on these two pages.
-    - Do not use other flavors/variants of Markdown or "extended" Markdown.  They are not standardized and will not display correctly for all users and all viewers.
-    - Do not embed HTML.  While it is permitted by the original variant of Markdown, for the purposes of FreeKB it makes pages considerably less readable and harder to edit.  "Simple is better".
+-  Due to ambiguities in John Gruber's historic documentation regarding Markdown, you should use CommonMark.org to learn Markdown.  CommonMark offers a highly compatible and clear specification for Markdown, with beginner guides and a full specification document.   FreeKB uses the [CommonMark specification](https://spec.commonmark.org/current/) of Markdown.
+- Do not embed HTML.  While it is otherwise permitted in Markdown, for the purposes of FreeKB it makes pages considerably less readable and harder to edit.  "Simple is better".
 - Your article title goes in the first line of your article (see template).  Only your article title should use the Heading level 1 (#).
 - If you see an image in another article you'd like to use, copy it into your article's directory first.  The other article may enventually modify or delete their copy of the image.  Making a "local copy" in your article directory preserves the image for your article's use.
 - Do not use absolute references to images from the Web (the image will disappear off the Web sooner or later).  But also, don't copy images from the web into FreeKB--these will be copyrighted!  Create your own images.  
@@ -18,8 +16,8 @@ The article template stored under 4b857b00-8bd4-4606-9ed6-be6f751ddfe7 should be
 - Always use relative references (such as to images and other articles).
 - Never change the UUID of any folders.  Always name your article "index.md".
 
-## Original Markdown quick reference page
-https://www.markdownguide.org/basic-syntax/
+## CommonMark Markdown quick reference page
+https://commonmark.org/help/
 
 ## Automated method for creating a new article
 - WSL script (requires `uuid` package to be installed):
