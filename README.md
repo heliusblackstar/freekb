@@ -53,7 +53,7 @@ Rather than re-invent search, use the search tools already in your editor and OS
 ### Browsing all articles
 #### Use grep to generate a table of contents
 You can generate a table of contents with grep from the top-level folder:   
-- Article UUIDs and titles:
+- Article UUIDs and titles (sorted 'randomly'):
 
         $ egrep --exclude-dir=.git -r "^# "
         4b857b00-8bd4-4606-9ed6-be6f751ddfe7/index.md:# TEMPLATE: Your article title must go here in the Heading level 1 style
