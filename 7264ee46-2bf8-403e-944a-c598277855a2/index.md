@@ -1,4 +1,4 @@
-# Resetting the Linux root account without a boot disk
+# Resetting the Linux root password without a boot disk
 
 ## Summary
 It is possible to access a root shell without a boot disk, and without the root password, if you have console access to a Linux server.  Using this method you can reset any account password, or perform other tasks.
