@@ -4,11 +4,11 @@ FreeKB is a knowledge base for technical topics.  All content is in the public d
 
 ## Design framework of FreeKB
 - **Simple** is better.
-- **Distributed** is better than centralized.  Centralized gets expensive to maintain (see Wikipedia's recurring donation requests).  Currently FreeKB is managed & distributed via Git, but copies could also be distributed via BitTorrent, USB sticks, etc.
 - **Plain-text** is better than a database or an app.
 - Markdown syntax (specifically CommonMark) gives us plain-text with rich-text features.
-- **Portable**  is important.  **Files in a folder on your own computer are better than a server** loaded up with a complex network of web libraries, interpreters, frameworks, and custom packages that will require maintenance to keep running and accessible.
-- Everyone should be able to use the tools of their own choice to read and modify the KB, though we will all follow certain style and structure conventions.
+- **Distributed & portable** is better than centralized.  Centralized gets expensive to maintain (see Wikipedia's recurring donation requests).  
+   - **Files in a folder on your own computer are better than a server** loaded up with a complex network of web libraries, interpreters, frameworks, and custom packages that will require maintenance to keep running and accessible.  Currently FreeKB is managed & distributed via Git, but copies could also be distributed via BitTorrent, USB sticks, etc.
+- Everyone should be able to use the tools of their own choice to read and modify the KB.   Overall order is maintained by following the published [Style Rules](./9d798584-cb62-45ba-9b80-bde71b946329\index.md).
 - **Powerful search is already in your OS and editor/IDE**, no need to re-invent search tools.
 - **Hyperlinks between articles should NEVER be broken**.  To ensure this, we give each article its own folder, not based on an article title (which may change), but on a UUID (example: 71dbb5b0-c3f6-4784-9d66-bde0cc64616d), which is dedicated to that article.
     - All articles are named "index.md", and the actual article title is in the plain-text of the article, on the first line.  This ensures the filename never changes, even if the article title changes (and thus hyperlinks are permanent and never break), and also provides ease-of-use for any scripts or programs built on top of FreeKB.
@@ -25,7 +25,8 @@ FreeKB is a knowledge base for technical topics.  All content is in the public d
 
 ## Using the Knowledgebase
 ### Searching for content on a subject
-Rather than re-invent search, use the search tools already in your editor and OS.
+Searching is the best way to use the knowledge base.  
+Rather than re-invent search, use the search tools already in your editor and OS:
 - Open the FreeKB folder in your File Explorer or text editor/IDE and do a full-text search for the keywords you are interested in.
 - Use grep to do a keyword search against the article titles:
  
@@ -51,6 +52,7 @@ Rather than re-invent search, use the search tools already in your editor and OS
         d18c2f6b-a5e2-48ca-971b-61e5f5cabe9e/index.md-  - ssh-add -D  #clears all keys out of memory
 
 ### Browsing all articles
+This is something only done occasionally, especially as FreeKB grows.
 #### Use grep to generate a table of contents
 You can generate a table of contents with grep from the top-level folder:   
 - Article UUIDs and titles (sorted 'randomly'):
