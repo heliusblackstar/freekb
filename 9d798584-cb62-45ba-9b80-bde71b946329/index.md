@@ -45,7 +45,7 @@ We do this by creating a folder using any UUID v4 (random) generation tool.  Thi
 
     Use one of these techniques to generate your article's UUID:
     - Web:   https://www.uuidgenerator.net/ (Make sure it is a Version 4 UUID)
-    - PowerShell: ``> [guid]::NewGuid()``
+    - PowerShell command: `[guid]::NewGuid()`
 1. Next, create a folder with the foldername as the UUID, and copy the template from 4b857b00-8bd4-4606-9ed6-be6f751ddfe7/index.md to it.
 1. Lastly, use your editor to open UUID/index.md and start editing.
 
