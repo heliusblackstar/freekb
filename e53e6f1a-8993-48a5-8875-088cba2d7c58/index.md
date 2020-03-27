@@ -1,21 +1,35 @@
 # Introduction to IPv6
 
 ## Summary
-IPv6 offers a publically routable address for every device interface, and solves some of the problems with IPv4.
+IPv6 offers a publically routable address for every node, and introduces a variety a completely new concepts, mechanisms, things-that-must-be-true, and protocols.
 
 ## Source materials
 If you read nothing further in this article, read this:  
 You should go read RFC7368 ("IPv6 Home Networking Architecture Principles").  It's a great general introduction to IPv6 and links to many other articles that will help introduce you to how IPv6 is designed and works.  It also frames the introduction in the context of a simple-to-understand home network.
 
 ## Major features and changes in contrast to IPv4
+### Ping packets (ICMPv6 Echo Requests) cannot be dropped by firewalls and all nodes MUST respond to ping
+Ping is reliable again!  Hooray!
+
+As used by the standard documents, "MUST" means:
+>This word, or the terms "REQUIRED" or "SHALL", mean that the definition is an absolute requirement of the specification." (RFC2119).
+
+Doesn't mean the OS needs to include a "ping" utility, just that it is required to respond to pings per the ICMPv6 standard (RFC4443 section 4.1), and that ping packets transiting a firewall "Must Not Be Dropped" (RFC4890 section 4.2.1).
 ### NAT is eradicated!   
-NAT was not a security feature (RFC2775 section 3.4).  NAT was NEVER desirable but was a horrible band-aid created to solve the egregious address shortage in IPv4.    
+NAT was not a security feature (RFC2775 section 3.4).  
+NAT was NEVER desirable but was a horrible band-aid created to solve the egregious address shortage in IPv4.    
 IPv6 solves both these two problems.  IPv6 has plenty of addresses and therefore NAT and all the headaches brought are eliminated (RFC7368, section 2.2).  Addresses are NOT altered by NAT in transit thru a firewall.  Global Unicast Addresses will exist on both sides of a firewall, both the external and internal interfaces.
 
 Note, that firewalls still exist--you can still have firewall policies that allow or deny traffic, either on the device, or at the network perimeter.
 
 ### The need for subnetting is gone!  
-The standard prefix for all networks is a /64.  A /64 network prefix (which has **more than trillions of addresses** on it) is recommended and acceptable even for networks which only have 2 devices (and this leaves plenty of room for growth later).  
+The standard prefix for all networks that contain nodes is a /64.  
+
+A /64 network prefix (which has **more than trillions of addresses** on it) is recommended and acceptable even for networks which only have 2 devices (and this leaves plenty of room for growth later).  So whether the network will have 2 devices or more than 2 trillion, the prefix length is /64 (RFC7421):
+
+        The de facto length of almost all IPv6 interface identifiers is therefore 64 bits.  The only documented exception is in [RFC6164], which  standardizes 127-bit prefixes for point-to-point links between routers,  among other things, to avoid a loop condition known as the ping-pong problem.
+
+The only two valid prefix lengths for networks which contains nodes are a /64 and a /127.  Any other length violates the IPv6 standard and breaks SLAAC as well as other IPv6 protocols (RFC7421 section 4.1 actually attempts to show how many IPv6 protocols are built on the /64 prefix size).
 
 Even home users are recommended to be assigned **at least**  a /56, which is 256 networks (256 /64 prefixes), giving them 256 separate networks, each which can hold more than trillions of devices.  
 
@@ -52,7 +66,7 @@ DHCPv6 comes in two flavors, and neither communicates a default route.
 
 Router Advertisements are multicast packets sent out by routers to let nodes know what Link Local address to use to contact a nearby router, and what routes the router has.  RAs are how a device finds a default gateway.  There is an expiration timer on the information in the RAs (and therefore an expiration on a host's default route)--but RAs are sent on a recurring basis by routers.
 
-SLAAC - TODO
+SLAAC - TODO.  EUI-64, Temporary Addresses (Privacy Extension)
 
 Manually & statically configured - TODO
 
@@ -60,8 +74,11 @@ Manually & statically configured - TODO
 TODO
 
 ## IPv6 address format
-TODO
+Prefix : Interface ID
 
+
+Links:  
+[RFC4443]: https://tools.ietf.org/html/rfc4443
 
 ***
 _Mandatory_page_footer: This article and the rest of the FreeKB is dedicated to the public domain via the [Creative Commons CC0](../LICENSE.md)._
