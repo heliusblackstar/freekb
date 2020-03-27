@@ -1,7 +1,7 @@
 # Introduction to IPv6
 
 ## Summary
-IPv6 offers a publically routable address for every node, and introduces a variety a completely new concepts, mechanisms, things-that-must-be-true, and protocols.
+IPv6 offers a publically routable address for every node, and introduces a variety of completely new concepts, mechanisms, things-that-must-be-true, and protocols.
 
 ## Source materials
 If you read nothing further in this article, read this:  
@@ -17,8 +17,8 @@ As used by the standard documents, "MUST" means:
 Doesn't mean the OS needs to include a "ping" utility, just that it is required to respond to pings per the ICMPv6 standard (RFC4443 section 4.1), and that ping packets transiting a firewall "Must Not Be Dropped" (RFC4890 section 4.2.1).
 ### NAT is eradicated!   
 NAT was not a security feature (RFC2775 section 3.4).  
-NAT was NEVER desirable but was a horrible band-aid created to solve the egregious address shortage in IPv4.    
-IPv6 solves both these two problems.  IPv6 has plenty of addresses and therefore NAT and all the headaches brought are eliminated (RFC7368, section 2.2).  Addresses are NOT altered by NAT in transit thru a firewall.  Global Unicast Addresses will exist on both sides of a firewall, both the external and internal interfaces.
+NAT was NEVER desirable but was a itself a horrible band-aid created to solve the egregious address shortage in IPv4.    
+IPv6 solves both these two problems (lack of addresses and NAT).  IPv6 has plenty of addresses and therefore NAT and all the headaches it introduced are eliminated (RFC7368, section 2.2).  Addresses are NOT altered by NAT in transit thru a firewall.  Global Unicast Addresses will exist on both sides of a firewall, both the external and internal interfaces.
 
 Note, that firewalls still exist--you can still have firewall policies that allow or deny traffic, either on the device, or at the network perimeter.
 
@@ -59,18 +59,20 @@ But not really.  It's just more formalized and with a new name--Multicast.  Mult
 The concept of a subnet's "network address" and "broadcast address" being unusable for nodes (e.g. 192.168.1.0/24 and 192.168.1.255/24) is gone too:
 > In IPv6, all zeros and all ones are legal values for any field, unless specifically excluded.  Specifically, prefixes may contain, or end with, zero-valued fields. (RFC4291)
 
-### Configuration methods for IPv6 network interfaces
-DHCP and static are no longer the only 2 options, and manually configuring network interaces can be rare.
+### New configuration methods for IPv6 network interfaces
+While IPv4 had "DHCP and statically configured", IPv6 has a host (ha!) of new configuration methods.  Manually configuring network interaces can be rare.
 
-DHCPv6 comes in two flavors, and neither communicates a default route.
-- Stateful, which is like DHCPv4 insomuchas the DHCP server needs to remember the leases it has given out.
-- Stateless, a new tasty flavor where the DHCPv6 server does not need to remember any leases.  It simply notifies clients of the appropriate /64 prefix to use, and clients autogenerate their own addresses within that /64 network prefix.
+Router Advertisements (RAs) are multicast packets sent out by routers to let nodes know what Link Local address to use to contact a nearby router, and what routes the router has.  RAs are how a device automatically finds a default gateway.  There is an expiration timer on the information in the RAs (and therefore an expiration on a host's default route)--but RAs are sent on a recurring basis by routers.
 
-Router Advertisements are multicast packets sent out by routers to let nodes know what Link Local address to use to contact a nearby router, and what routes the router has.  RAs are how a device finds a default gateway.  There is an expiration timer on the information in the RAs (and therefore an expiration on a host's default route)--but RAs are sent on a recurring basis by routers.
+DNS server information can be autoconfigured via several different mechanisms (RF4339).
 
-SLAAC - TODO.  EUI-64, Temporary Addresses (Privacy Extension)
+DHCPv6 comes in two flavors, and neither communicates a default route, which can be handled with RAs).  
+- Stateful, which is like DHCPv4 insomuch as the DHCP server needs to record the leases it has given out.  Given the scale an IPv6 network may reach, it may not be desirable to try to record all the addresses given out by a DHCPv6 server.
+- Stateless, a new tasty flavor where the DHCPv6 server does not need to remember any leases.  It simply notifies clients of the appropriate /64 prefix to use, and clients autogenerate their own addresses within that /64 network prefix, avoiding IP conflicts by using Duplicate Address Detection (DAD).  
 
-Manually & statically configured - TODO
+SLAAC - TODO.  EUI-64, Temporary Addresses (Privacy Extension).  Example: 5021fa43-5676-4875-acfe-3f7f82517109\index.md
+
+Manually & statically configured - TODO (such as 78aa9176-0efe-4590-9d61-d2f6bb9bf591\index.md)
 
 ## IPv6 address types
 TODO

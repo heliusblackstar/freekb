@@ -1,7 +1,7 @@
 # Using IPv6 autoconfiguration on Debian Linux
 
 ## Summary
-On Debian 10 and later, IPv6 autoconfiguration is already enabled.   Autoconfiguration will attempt to autoconfigure addresses based on the stateful or stateless autoconfiguration methods already enabled on the network.  More information about available methods is detailed in the RFCs.
+On Debian 10 and later, IPv6 autoconfiguration is already enabled.   Autoconfiguration will attempt to autoconfigure addresses based on the stateful or stateless autoconfiguration (such as SLAAC) methods already enabled on the network.  More information about available methods is detailed in the RFCs.
 
 ## Steps
 1. Verify your system is configured for autoconfiguration.  The following lines will be present in `/etc/network/interfaces`.  If they are not present and you decide to add them, you'll need to reboot or ifdown/ifup your network interface after.
