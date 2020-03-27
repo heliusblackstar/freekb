@@ -29,6 +29,7 @@ On Debian 10 and later, IPv6 autoconfiguration is already enabled.   Autoconfigu
 If you do not see IPv6 addresses, then your Layer 2 network does not have IPv6 enabled.  Enable it on your network.
 
 
-***
-_Mandatory_page_footer: This article and the rest of the FreeKB is dedicated to the public domain via the [Creative Commons CC0](../LICENSE.md)._
+*** 
+_Mandatory_page_footer: This article and the rest of the [FreeKB](../README.md) is dedicated to the public domain via the [Creative Commons CC0](../LICENSE.md)._
+
 

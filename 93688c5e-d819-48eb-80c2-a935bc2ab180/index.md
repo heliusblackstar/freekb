@@ -25,6 +25,8 @@ Moving applications to a different virtual desktop:
 To switch to a different virtual desktop, use Task View and click on the Virtual Desktop.  You can also use `Control+Windows Key+Left` or `Control+Windows Key+Right` to slide left and right thru your virtual desktops.
 
 
-***
-_Mandatory_page_footer: This article and the rest of the FreeKB is dedicated to the public domain via the [Creative Commons CC0](../LICENSE.md)._
+*** 
+_Mandatory_page_footer: This article and the rest of the [FreeKB](../README.md) is dedicated to the public domain via the [Creative Commons CC0](../LICENSE.md)._
+
+
 

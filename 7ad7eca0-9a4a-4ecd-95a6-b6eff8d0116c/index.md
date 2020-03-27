@@ -45,6 +45,7 @@ You could then use "git checkout" to switch between your "master" (which would b
 In your private branch, you could technically do whatever you want.  In your own private branch, you wouldn't even need to follow the Style Rules or Design Framework.  
 
 
-***
-_Mandatory_page_footer: This article and the rest of the FreeKB is dedicated to the public domain via the [Creative Commons CC0](../LICENSE.md)._
+*** 
+_Mandatory_page_footer: This article and the rest of the [FreeKB](../README.md) is dedicated to the public domain via the [Creative Commons CC0](../LICENSE.md)._
+
 
