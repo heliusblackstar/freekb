@@ -34,7 +34,7 @@ In 32-bit Operating systems, you will want to use DWORD instead of QWORD.
 After setting this in the registry, reboot.  Login again, and force a time sync with an Internet time source, or manually fix the system time in the VM.  This should correct this behavior error.
 
 
+*** 
+_Mandatory_page_footer: This article and the rest of the [FreeKB](../README.md) is dedicated to the public domain via the [Creative Commons CC0](../LICENSE.md)._
 
-***
-_Mandatory_page_footer: This article and the rest of the FreeKB is dedicated to the public domain via the [Creative Commons CC0](../LICENSE.md)._
 

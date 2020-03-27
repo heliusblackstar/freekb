@@ -56,7 +56,8 @@ If your article will contain sensitive information you don't want to put into th
 Before you `git commit`, [ensure your configuration name and email address are what you want to show in your commits](./05771c30-f03e-4dbb-8aee-ea0c57545626/index.md).
     
 
-***
-_Mandatory_page_footer: This article and the rest of the FreeKB is dedicated to the public domain via the [Creative Commons CC0](../LICENSE.md)._
+*** 
+_Mandatory_page_footer: This article and the rest of the [FreeKB](../README.md) is dedicated to the public domain via the [Creative Commons CC0](../LICENSE.md)._
+
 
 
