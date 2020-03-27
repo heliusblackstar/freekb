@@ -11,7 +11,7 @@ You should go read RFC7368 ("IPv6 Home Networking Architecture Principles").  It
 ### Ping packets (ICMPv6 Echo Requests) cannot be dropped by firewalls and all nodes MUST respond to ping
 Ping is reliable again!  Hooray!
 
-As used by the standard documents, "MUST" means:
+In this context, "MUST" means:
 >This word, or the terms "REQUIRED" or "SHALL", mean that the definition is an absolute requirement of the specification." (RFC2119).
 
 Doesn't mean the OS needs to include a "ping" utility, just that it is required to respond to pings per the ICMPv6 standard (RFC4443 section 4.1), and that ping packets transiting a firewall "Must Not Be Dropped" (RFC4890 section 4.2.1).
@@ -25,11 +25,11 @@ Note, that firewalls still exist--you can still have firewall policies that allo
 ### Subnetting is gone!
 The standard prefix for all networks that contain nodes is a /64.  
 
-A /64 network prefix (which has **more than trillions of addresses** on it) is recommended and acceptable even for networks which only have 2 devices (and this leaves plenty of room for growth later).  So whether the network will have 2 devices or more than 2 trillion, the prefix length is /64 (RFC7421):
+A /64 network prefix (which has **more than trillions of addresses** on it (specifically 2^64)) is recommended and acceptable even for networks which only have 2 devices (and this leaves plenty of room for growth later).  So whether the network will have 2 devices or more than 2 trillion, the prefix length is /64 (RFC7421):
 
         The de facto length of almost all IPv6 interface identifiers is therefore 64 bits.  The only documented exception is in [RFC6164], which  standardizes 127-bit prefixes for point-to-point links between routers,  among other things, to avoid a loop condition known as the ping-pong problem.
 
-The only two valid prefix lengths for networks which contains nodes are a /64 and a /127.  Any other length violates the IPv6 standard and breaks SLAAC as well as other IPv6 protocols (RFC7421 section 4.1 actually attempts to show how many IPv6 protocols are built on the /64 prefix size).
+The only two valid prefix lengths for networks which contain nodes are a /64 and a /127.  Any other length violates the IPv6 standard and breaks SLAAC as well as other IPv6 protocols (RFC7421 section 4.1 actually attempts to show how many IPv6 protocols are built on the /64 prefix size).
 
 ### The IPv6 address space is mind-bogglingly expansive
 To oversimply it, the size of the IPv4 address space is 2^32.  
@@ -38,7 +38,7 @@ To oversimply it, the size of the IPv4 address space is 2^32.
 The size difference in address space between IPv4 and IPv6 is so incredibly vast that it's actually quite difficult to convey how much larger the IPv6 address space is.  Much like we said before, we can say, "this should be enough addresses for a very long time".
 
 ### Global Unicast Addresses are abundant and everyone gets them!  
-There are enough publically routable addresses (also known as Global Unicast Addresses) for every device interface on every device.  Every server, every client, every device can and does have as many Global Unicast addresses ("public IPs" in IPv4 parlance) as it needs.  
+There are enough Global Unicast Addresses (similar to "Public IPs" in IPv4 parlance) for every device interface on every device.  Every server, every client, every device, there's enough for everything and everyone. 
 
 Even home users are recommended to be assigned **at least** a /56, which is 256 networks (256 /64 prefixes), giving them 256 separate networks, each which can hold more than trillions of devices.  Home users may also be assigned a /48, which is 65,536 /64 networks, each containing more than trillions of addresses.
 
@@ -60,15 +60,22 @@ The concept of a subnet's "network address" and "broadcast address" being unusab
 > In IPv6, all zeros and all ones are legal values for any field, unless specifically excluded.  Specifically, prefixes may contain, or end with, zero-valued fields. (RFC4291)
 
 ### New configuration methods for IPv6 network interfaces
-While IPv4 had "DHCP and statically configured", IPv6 has a host (ha!) of new configuration methods.  Manually configuring network interaces can be rare.
+IPv4 had DHCP and statically configured.  
+IPv6 has DHCPv6 (which is different than DHCP for IPv4), SLAAC (no DHCP server needed), and manual configuration.
 
-Router Advertisements (RAs) are multicast packets sent out by routers to let nodes know what Link Local address to use to contact a nearby router, and what routes the router has.  RAs are how a device automatically finds a default gateway.  There is an expiration timer on the information in the RAs (and therefore an expiration on a host's default route)--but RAs are sent on a recurring basis by routers.
+Neighbor Discovery (ND) is new family of ICMPv6 protocols, includes Router Advertisements and Router Solicitations, and also includes a mechanism to ask the network for the Layer 2 address to use to reach a Layer 3 IP (similar to IPv4 ARP).
 
-DNS server information can be autoconfigured via several different mechanisms (RF4339).
+Router Advertisements (RAs) are new in IPv6.  RAs are multicast packets sent out both periodically by routers, and in response to Router Solicitation (RS) messages from nodes on the network.  An RA lets nodes know what Link Local address to use to contact a nearby router, and what routes the router has.  RAs are how a device automatically finds a default gateway, among potentially other things.  There is an expiration timer on the information in the RAs (and therefore an expiration on a host's default route)--but RAs are usually sent on a recurring basis by routers.
 
-DHCPv6 comes in two flavors, and neither communicates a default route, which can be handled with RAs).  
+Routers can communicate DNS servers for nodes to use by including that information in their RAs.  There are discussions to amend the standards to include other methods for DNS server autoconfiguration as well (see RFC4339).
+
+DHCPv6 comes in two flavors, and neither communicates a default route!  Nodes learn their default route by listening to RAs.  
 - Stateful, which is like DHCPv4 insomuch as the DHCP server needs to record the leases it has given out.  Given the scale an IPv6 network may reach, it may not be desirable to try to record all the addresses given out by a DHCPv6 server.
-- Stateless, a new tasty flavor where the DHCPv6 server does not need to remember any leases.  It simply notifies clients of the appropriate /64 prefix to use, and clients autogenerate their own addresses within that /64 network prefix, avoiding IP conflicts by using Duplicate Address Detection (DAD).  
+- Stateless, a new tasty flavor where the DHCPv6 server does not need to remember any leases.  It simply notifies clients of the appropriate /64 prefix to use, and clients autogenerate their own addresses within that /64 network prefix, avoiding IP conflicts by using Duplicate Address Detection (DAD). 
+
+There is also DHCPv6-PD (Prefix Delegation), which is a method a router can use to request additional Global Unicast prefixes, such as for it's 'internal' interfaces.  Once a router's 'internal' network interface obtains a Global Unicast prefix, that router interface can assist nodes on the link in obtaining Global Unicast addresses, among other things.
+
+SLAAC (Stateless Address Autoconfiguration) (RFC4862) is completely new.
 
 SLAAC - TODO.  EUI-64, Temporary Addresses (Privacy Extension).  Example: 5021fa43-5676-4875-acfe-3f7f82517109\index.md
 
