@@ -3,6 +3,9 @@
 ## Summary
 IPv6 offers a publically routable address for every node, and introduces a variety of completely new concepts, mechanisms, things-that-must-be-true, and protocols.
 
+## Estimated Time to Read
+12 minutes at 200 words per minute.
+
 ## Source materials
 If you read nothing further in this article, read this:  
 You should go read RFC7368 ("IPv6 Home Networking Architecture Principles").  It's a great general introduction to IPv6 and links to many other articles that will help introduce you to how IPv6 is designed and works.  It also frames the introduction in the context of a simple-to-understand home network.

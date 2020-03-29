@@ -6,6 +6,9 @@ DataBee has been observed to cause both existing files to be overwritten as well
 This doesn't seem to be a Git bug, although it's hard to say if your OS or the your Editor is ultimately to blame.  
 Or it might be the users fault.
 
+## Estimated Time to Read
+3 minutes at 200 words per minute.
+
 ## Detailed explanation of DataBee
 When you run `git checkout`, your editor should automatically update to show you the new versions of the files you just checked out.  However, due to DataBee, in some environments, it will not.  So your editor will still show versions from "branch A", but you have checked out "branch B".   
 You will then begin editing the files in your editor, unaware that your editor is still showing files from "branch A".  Then, when you hit Save/Save All in your editor, your editor will overwrite the copy of the files in "branch B" with the copies it is showing on-screen from "branch A".  It can also save an unwanted copy of files from "branch A" into "branch B".  

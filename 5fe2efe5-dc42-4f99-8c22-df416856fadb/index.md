@@ -3,6 +3,9 @@
 ## Summary
 This is a flaw in Microsoft Windows.  The incorrect behavior can be corrected with a registry setting.
 
+## Estimated Time to Read
+2 minutes at 200 words per minute.
+
 ## Symptoms
 Windows VMs will report a drastically different time when cold booted.  This can also happen on physical machines if the machine dual-boots with Linux, and the system is booted into Linux and then later into Windows. 
 

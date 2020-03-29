@@ -3,6 +3,9 @@
 ## Summary
 You can use a git branch to store articles you wish to keep private, or that do not follow the Design Framework or Style Rules of the original instance of FreeKB.  This article gives recommendations on how to do this.
 
+## Estimated Time to Read
+3 minutes at 200 words per minute.
+
 ## Note
 This article does make the assumption that you used Git to obtain the original instance of FreeKB (authoritatively stored at https://github.com/heliusblackstar/freekb).
 
