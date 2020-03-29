@@ -154,9 +154,10 @@ Site Local - deprecated and no longer used.  Was within the fec0::/10 prefix.
 
 Global Unicast - Similar to Public IPs in IPv4.  Globally routable.  Per RFC3513, Global Unicast addresses only begin with 2000::/3.  In other words the first chunk will be "2000" thru "3fff".  So if the first chunk is "2601" or "2620", these are Global Unicast addresses, but if the first chunk is "fe80" it would not be a Global Unicast address.
 
-Link Local addresses are within fc00::/7.  First chunk will be "fc00" thru "fdff".  Link local addresses are not routable and are only used for communication between nodes on the same Layer 2 network.
+Unique Local addresses are within fc00::/7.  First chunk will be "fc00" thru "fdff".  These are not globally routable addresses, but are similar to the RFC1918 address space in IPv4.  A site can have many Unique Local prefixes and route them within their site or organization, even if the organization does not have any Global Unicast prefixes.
 
-Unique Local addresses are within fe80::/10.  First chunk will be "fe80" thru "febf".  These are not globally routable addresses, but are similar to the RFC1918 address space in IPv4.  A site can have many Unique Local prefixes and route them within their site or organization, even if the organization does not have any Global Unicast prefixes.
+Link Local addresses are within fe80::/10.  First chunk will be "fe80" thru "febf".  Link local addresses are not routable and are only used for communication between nodes on the same Layer 2 network.
+
 
 As you can see, first chunks like "4000" or "e000" are not covered by any of the above definitions.  Surprisingly, only 15% of the overall IPv6 address space is currently defined for any category of use.  The other 85% of the address space is reserved for the future.
 
