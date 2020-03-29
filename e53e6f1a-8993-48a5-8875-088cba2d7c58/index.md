@@ -15,6 +15,7 @@ In this context, "MUST" means:
 >This word, or the terms "REQUIRED" or "SHALL", mean that the definition is an absolute requirement of the specification." (RFC2119).
 
 Doesn't mean the OS needs to include a "ping" utility, just that it is required to respond to pings per the ICMPv6 standard (RFC4443 section 4.1), and that ping packets transiting a firewall "Must Not Be Dropped" (RFC4890 section 4.2.1).
+
 ### NAT is eradicated!   
 NAT was not a security feature (RFC2775 section 3.4).  
 NAT was NEVER desirable but was a itself a horrible band-aid created to solve the egregious address shortage in IPv4.    
@@ -33,6 +34,9 @@ The only two valid prefix lengths for networks which contain nodes are a /64 and
 
 ### Subnet masks are gone.
 We represent the size of a prefix by describing how many of the first bits in an address are part of the prefix.  Nodes are almost always in a network that has a 64 bit prefix, and so we would append "/64" to the address to indicate this when necessary.  This is similiar to IPv4 CIDR notation ("192.168.1.0/24" meaning the first 24 bits of the address are the network portion).
+
+### Addresses are written in hexadecimal
+The lowest hex digit is 0.  Then 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, a, b, c, e, f.  "2601" is lower than "fe80".  All the numbers come first, then all the letters.
 
 ### The IPv6 address space is mind-bogglingly expansive
 To oversimply it, the size of the IPv4 address space is 2^32.  
@@ -80,11 +84,11 @@ DHCPv6-PD (Prefix Delegation), is a method a router can use to request additiona
 
 SLAAC (Stateless Address Autoconfiguration) (RFC4862) is completely new.  SLAAC is a protocol nodes use to generate their own IPv6 addresses.  As part of SLAAC, nodes generate RSs and then receive RAs which contain IPv6 prefixes for them to use.   This prefix is prefixed to the part of the address that the node auto-generates to form a complete IPv6 address.  Nodes will generate both a Global Unicast address using the prefix from the RAs, as well as a Unique Local address which uses the Unique Local prefix in use on the link the node is on.  It should also be mentioned that a Link Local address is also generated for IPv6 interfaces.
 
-SLAAC addresses can be relatively stable if the node uses EUI-64, or may change from time to time if the node uses SLAAC Privacy Extensions (Temporary Addresses).  SLAAC addresses generated using EUI-64 (a way of encoding the node's interface's MAC address into the IPv6 address) will have "ff:fe" in the middle of the second half of the IPv6 address(s).
+SLAAC addresses can be relatively stable if the node uses EUI-64, or may change from time to time if the node uses SLAAC Privacy Extensions (Temporary Addresses).  SLAAC addresses generated using EUI-64 (a way of encoding the node's interface's MAC address into the IPv6 address) will have "ff:fe" in the middle of the second half of the IPv6 address(s).  Privacy addresses will not.
 
-SLAAC - TODO.  EUI-64, Temporary Addresses (Privacy Extension).  Example: 5021fa43-5676-4875-acfe-3f7f82517109\index.md
+[This article shows an example of how to enable SLAAC/autoconfiguration for IPv6](../5021fa43-5676-4875-acfe-3f7f82517109/index.md).
 
-Manually & statically configured - TODO (such as 78aa9176-0efe-4590-9d61-d2f6bb9bf591\index.md)
+Manually/statically configuration is also possible.  See [this article for an example of manually configuring an IPv6 address](../78aa9176-0efe-4590-9d61-d2f6bb9bf591/index.md).
 
 ## IPv6 address format
 IPv4 addresses are 32-bits.  IPv4 addresses are four groups of numbers.  Each group is called an "octet".  
@@ -144,18 +148,17 @@ These two addresses are on different networks:
 As an aside, it would also be exceedingly unlikely for two machines on different networks to autogenerate the same interface ID as above.
 
 ## IPv6 address types
-TODO
-Unicast
-        Global Unicast
-        Unique Local
-        Site Local - gone
-        Link Local (fe80 etc)
+### Unicast
 
+Site Local - deprecated and no longer used.  Was within the fec0::/10 prefix.  
 
+Global Unicast - Similar to Public IPs in IPv4.  Globally routable.  Per RFC3513, Global Unicast addresses only begin with 2000::/3.  In other words the first chunk will be "2000" thru "3fff".  So if the first chunk is "2601" or "2620", these are Global Unicast addresses, but if the first chunk is "fe80" it would not be a Global Unicast address.
 
+Link Local addresses are within fc00::/7.  First chunk will be "fc00" thru "fdff".  Link local addresses are not routable and are only used for communication between nodes on the same Layer 2 network.
 
-Links:  
-[RFC4443]: https://tools.ietf.org/html/rfc4443
+Unique Local addresses are within fe80::/10.  First chunk will be "fe80" thru "febf".  These are not globally routable addresses, but are similar to the RFC1918 address space in IPv4.  A site can have many Unique Local prefixes and route them within their site or organization, even if the organization does not have any Global Unicast prefixes.
+
+As you can see, first chunks like "4000" or "e000" are not covered by any of the above definitions.  Surprisingly, only 15% of the overall IPv6 address space is currently defined for any category of use.  The other 85% of the address space is reserved for the future.
 
 
 *** 
