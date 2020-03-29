@@ -21,7 +21,7 @@ Doesn't mean the OS needs to include a "ping" utility, just that it is required 
 
 ### NAT is eradicated!   
 NAT was not a security feature (RFC2775 section 3.4).  
-NAT was NEVER desirable but was a itself a horrible band-aid created to solve the egregious address shortage in IPv4.    
+NAT was NEVER desirable but was itself a horrible band-aid created to solve the egregious address shortage in IPv4.    
 IPv6 solves both these two problems (lack of addresses and NAT).  IPv6 has plenty of addresses and therefore NAT and all the headaches it introduced are eliminated (RFC7368, section 2.2).  Addresses are NOT altered by NAT in transit thru a firewall.  Global Unicast Addresses will exist on both sides of a firewall, both the external and internal interfaces.
 
 Note, that firewalls still exist--you can still have firewall policies that allow or deny traffic, either on the device, or at the network perimeter.
