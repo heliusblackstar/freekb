@@ -31,6 +31,9 @@ A /64 network prefix (which has **more than trillions of addresses** on it (spec
 
 The only two valid prefix lengths for networks which contain nodes are a /64 and a /127.  Any other length violates the IPv6 standard and breaks SLAAC as well as other IPv6 protocols (RFC7421 section 4.1 actually attempts to show how many IPv6 protocols are built on the /64 prefix size).
 
+### Subnet masks are gone.
+We represent the size of a prefix by describing how many of the first bits in an address are part of the prefix.  Nodes are almost always in a network that has a 64 bit prefix, and so we would append "/64" to the address to indicate this when necessary.  This is similiar to IPv4 CIDR notation ("192.168.1.0/24 meaning the first 24 bits of the address are the network portion).
+
 ### The IPv6 address space is mind-bogglingly expansive
 To oversimply it, the size of the IPv4 address space is 2^32.  
 2^33 would be twice as large as that.  2^34 would be twice as large as that.  IPv6 is 2^128.
@@ -73,13 +76,72 @@ DHCPv6 comes in two flavors, and neither communicates a default route!  Nodes le
 - Stateful, which is like DHCPv4 insomuch as the DHCP server needs to record the leases it has given out.  Given the scale an IPv6 network may reach, it may not be desirable to try to record all the addresses given out by a DHCPv6 server.
 - Stateless, a new tasty flavor where the DHCPv6 server does not need to remember any leases.  It simply notifies clients of the appropriate /64 prefix to use, and clients autogenerate their own addresses within that /64 network prefix, avoiding IP conflicts by using Duplicate Address Detection (DAD). 
 
-There is also DHCPv6-PD (Prefix Delegation), which is a method a router can use to request additional Global Unicast prefixes, such as for it's 'internal' interfaces.  Once a router's 'internal' network interface obtains a Global Unicast prefix, that router interface can assist nodes on the link in obtaining Global Unicast addresses, among other things.
+DHCPv6-PD (Prefix Delegation), is a method a router can use to request additional Global Unicast prefixes, such as for it's 'internal' interfaces.  Once a router's 'internal' network interface obtains a Global Unicast prefix, that router interface can assist nodes on the link in obtaining Global Unicast addresses, among other things.
 
-SLAAC (Stateless Address Autoconfiguration) (RFC4862) is completely new.
+SLAAC (Stateless Address Autoconfiguration) (RFC4862) is completely new.  SLAAC is a protocol nodes use to generate their own IPv6 addresses.  As part of SLAAC, nodes generate RSs and then receive RAs which contain IPv6 prefixes for them to use.   This prefix is prefixed to the part of the address that the node auto-generates to form a complete IPv6 address.  Nodes will generate both a Global Unicast address using the prefix from the RAs, as well as a Unique Local address which uses the Unique Local prefix in use on the link the node is on.  It should also be mentioned that a Link Local address is also generated for IPv6 interfaces.
+
+SLAAC addresses can be relatively stable if the node uses EUI-64, or may change from time to time if the node uses SLAAC Privacy Extensions (Temporary Addresses).  SLAAC addresses generated using EUI-64 (a way of encoding the node's interface's MAC address into the IPv6 address) will have "ff:fe" in the middle of the second half of the IPv6 address(s).
 
 SLAAC - TODO.  EUI-64, Temporary Addresses (Privacy Extension).  Example: 5021fa43-5676-4875-acfe-3f7f82517109\index.md
 
 Manually & statically configured - TODO (such as 78aa9176-0efe-4590-9d61-d2f6bb9bf591\index.md)
+
+## IPv6 address format
+IPv4 addresses are 32-bits.  IPv4 addresses are four groups of numbers.  Each group is called an "octet".  
+IPv6 addresses are 128-bits.  IPv6 addresses are eight groups of hexadecimals (0-9, a-f).  Unfortunately there is not yet consensus on what these groups that make up the address should be called.  Various terms exist: nibble, quartet, hextet, piece, chunk.  No matter what term you use, you can say an IPv6 address is made up of 8 chunks, pieces, nibbles, etc.  These terms all mean the same thing.
+
+In almost all cases, a node will be on a /64 network.  In other words, the prefix is the portion of the address which matches for all nodes on that network, and is the first 64 bits--the first half.  
+The second half is the interface ID and will be unique for every host on that link (prefix).  
+So let's take the following IPv6 address: `2001:db8::4045:4dff:fecc:bae2`
+
+We can see this is only 6 chunks, not 8, and IPv6 addresses have 8 chunks.  This is because there are several circumstances in which you can shorten an IPv6 address, for convenience, and the shortened form is always used when possible.
+
+Let's use the address ``2001:0db8:0000:0000:0000:0011:0000:1111`` and then progressively shorten it to show you the shortening rules:
+1. If a chunk has any leading zeros, they can be removed.  So the 2nd and 6th chunks have leading zeros, which we can remove, giving us a shorter address of `2001:db8:0000:0000:0000:11:0000:1111`.
+1. If a chunk contains only 0s, you can write that chunk as a single 0.  So `2001:db8:0000:0000:0000:11:0000:1111` can be shortened to "2001:db8:0:0:0:11:0:1111".
+1. A single contiguous string of 0s can be shortened to simply `::`.  You can only do this once in an address.  So `2001:db8:0000:0000:0000:11:0000:1111` would become `2001:db8::11:0:1111`
+
+ANY of the aforementioned addresses are equally valid and useable.  However, you will commonly only see the fully shortened forms, or the full-length forms.
+
+Using this address, if we know this is on a /64 subnet, we would therefore know that in this case the e first half of the IPv6 address is the prefix, and the second half is the interface ID:  
+
+        IP:   
+        2001:0db8:0000:0000:0000:0011:0000:1111  
+        Prefix              :    Interface ID
+        2001:0db8:0000:0000 :    0000:0011:0000:1111
+        this part is the    :    this part will be unique
+        same for all hosts  :    for each host on the
+        on the link         :    link
+
+So we can conclude that all of these IPv6 addresses are on the same link.  Please note you will NOT normally see addresses written except in full-length or fully shortened form as below:
+        
+        2001:0db8:0000:0000:0000:0011:0000:1111/64
+        2001:db8::0011:0:1112/64
+        2001:db8::11:0:1113/64
+        2001:db8::11:0:1/64
+        2001:db8:0000:0000:0000::/64
+        2001:db8::ed53:d27c:e483:4b0b/64
+
+In the real-world, you would see these written in their fully shortened form.    Here it is easier to recognize the prefix and that these are on the same network.
+
+        2001:db8::11:0:1111/64
+        2001:db8::11:0:1112/64
+        2001:db8::11:0:1113/64
+        2001:db8::11:0:1/64
+        2001:db8::/64
+        2001:db8::ed53:d27c:e483:4b0b/64
+
+More examples...  
+These two addresses are on the same network:
+
+        2001:db8:9a3:5124:e55d:87e9:c877:c4ae/64
+        2001:db8:9a3:5124:8d0d:87f6:553f:872e/64
+
+These two addresses are on different networks:  
+
+        2001:db8:9a3:5124:9d08:358c:308a:decd/64
+        2001:db8:9a3:5120:9d08:358c:308a:decd/64
+As an aside, it would also be exceedingly unlikely for two machines on different networks to autogenerate the same interface ID as above.
 
 ## IPv6 address types
 TODO
@@ -89,8 +151,7 @@ Unicast
         Site Local - gone
         Link Local (fe80 etc)
 
-## IPv6 address format
-Prefix : Interface ID
+
 
 
 Links:  
