@@ -32,7 +32,7 @@ A /64 network prefix (which has **more than trillions of addresses** on it (spec
 The only two valid prefix lengths for networks which contain nodes are a /64 and a /127.  Any other length violates the IPv6 standard and breaks SLAAC as well as other IPv6 protocols (RFC7421 section 4.1 actually attempts to show how many IPv6 protocols are built on the /64 prefix size).
 
 ### Subnet masks are gone.
-We represent the size of a prefix by describing how many of the first bits in an address are part of the prefix.  Nodes are almost always in a network that has a 64 bit prefix, and so we would append "/64" to the address to indicate this when necessary.  This is similiar to IPv4 CIDR notation ("192.168.1.0/24 meaning the first 24 bits of the address are the network portion).
+We represent the size of a prefix by describing how many of the first bits in an address are part of the prefix.  Nodes are almost always in a network that has a 64 bit prefix, and so we would append "/64" to the address to indicate this when necessary.  This is similiar to IPv4 CIDR notation ("192.168.1.0/24" meaning the first 24 bits of the address are the network portion).
 
 ### The IPv6 address space is mind-bogglingly expansive
 To oversimply it, the size of the IPv4 address space is 2^32.  
@@ -91,29 +91,29 @@ IPv4 addresses are 32-bits.  IPv4 addresses are four groups of numbers.  Each gr
 IPv6 addresses are 128-bits.  IPv6 addresses are eight groups of hexadecimals (0-9, a-f).  Unfortunately there is not yet consensus on what these groups that make up the address should be called.  Various terms exist: nibble, quartet, hextet, piece, chunk.  No matter what term you use, you can say an IPv6 address is made up of 8 chunks, pieces, nibbles, etc.  These terms all mean the same thing.
 
 In almost all cases, a node will be on a /64 network.  In other words, the prefix is the portion of the address which matches for all nodes on that network, and is the first 64 bits--the first half.  
-The second half is the interface ID and will be unique for every host on that link (prefix).  
+The second half is the interface ID and will be unique for every host on that link (on that prefix).  
+
 So let's take the following IPv6 address: `2001:db8::4045:4dff:fecc:bae2`
 
 We can see this is only 6 chunks, not 8, and IPv6 addresses have 8 chunks.  This is because there are several circumstances in which you can shorten an IPv6 address, for convenience, and the shortened form is always used when possible.
 
 Let's use the address ``2001:0db8:0000:0000:0000:0011:0000:1111`` and then progressively shorten it to show you the shortening rules:
 1. If a chunk has any leading zeros, they can be removed.  So the 2nd and 6th chunks have leading zeros, which we can remove, giving us a shorter address of `2001:db8:0000:0000:0000:11:0000:1111`.
-1. If a chunk contains only 0s, you can write that chunk as a single 0.  So `2001:db8:0000:0000:0000:11:0000:1111` can be shortened to "2001:db8:0:0:0:11:0:1111".
-1. A single contiguous string of 0s can be shortened to simply `::`.  You can only do this once in an address.  So `2001:db8:0000:0000:0000:11:0000:1111` would become `2001:db8::11:0:1111`
+1. If a chunk contains only 0s, you can write that chunk as a single 0.  So `2001:db8:0000:0000:0000:11:0000:1111` can be shortened to `2001:db8:0:0:0:11:0:1111`.
+1. A single contiguous string of 0s can be shortened to simply `::`.  You can only do this once in an address.  So `2001:db8:0000:0000:0000:11:0:1111` would become `2001:db8::11:0:1111`
 
-ANY of the aforementioned addresses are equally valid and useable.  However, you will commonly only see the fully shortened forms, or the full-length forms.
+ANY of the aforementioned addresses are equally valid and useable.  However, you will commonly only see the fully shortened form, or the full-length form.
 
-Using this address, if we know this is on a /64 subnet, we would therefore know that in this case the e first half of the IPv6 address is the prefix, and the second half is the interface ID:  
-
-        IP:   
-        2001:0db8:0000:0000:0000:0011:0000:1111  
+Using this address, if we know this is on a /64 subnet, we would therefore know that in this case the first half of the IPv6 address is the prefix, and the second half is the interface ID:  
+   
+         2001:0db8:0000:0000:0000:0011:0000:1111/64  
         Prefix              :    Interface ID
         2001:0db8:0000:0000 :    0000:0011:0000:1111
         this part is the    :    this part will be unique
         same for all hosts  :    for each host on the
         on the link         :    link
 
-So we can conclude that all of these IPv6 addresses are on the same link.  Please note you will NOT normally see addresses written except in full-length or fully shortened form as below:
+With this understanding, we can conclude that all of the following IPv6 addresses are on the same link.  Please note you will NOT normally see addresses written except in full-length or fully shortened form as below:
         
         2001:0db8:0000:0000:0000:0011:0000:1111/64
         2001:db8::0011:0:1112/64
