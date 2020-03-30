@@ -56,7 +56,7 @@ A single /64, has 2^64 (18,446,744,073,709,551,616) Global Unicast addresses.
 The Global Unicast addresses in use are visible from the device's OS (simple!), so seeing a device's "public" address does not involve having to cross-reference a device's private IP with a firewall public/private NAT configuration like in IPv4.
 
 ### Firewalls can be set to simply passthru incoming IPv6 traffic, allowing simple inbound connectivity for any apps or services without any extra signaling protocol or manual firewall configuration.  
-As the RFCs state, do not confuse "addressability with reachability".  
+As the RFCs state, do not confuse "addressability" with "reachability".  
 To quote RFC7368:
 
         An IPv6-based home network architecture should embrace the transparent end-to-end communications model as described in [RFC2775].  Each device should be globally addressable, and those addresses must not be altered in transit.  However, security perimeters can be applied to restrict end-to-end communications, and thus while a host may be globally addressable, it may not be globally reachable.
