@@ -91,7 +91,7 @@ SLAAC addresses can be relatively stable if the node uses EUI-64, or may change 
 
 [This article shows an example of how to enable SLAAC/autoconfiguration for IPv6](../5021fa43-5676-4875-acfe-3f7f82517109/index.md).
 
-Manually/statically configuration is also possible.  See [this article for an example of manually configuring an IPv6 address](../78aa9176-0efe-4590-9d61-d2f6bb9bf591/index.md).
+Manual/static configuration is also possible.  See [this article for an example of manually configuring an IPv6 address](../78aa9176-0efe-4590-9d61-d2f6bb9bf591/index.md).
 
 ## IPv6 address format
 IPv4 addresses are 32-bits.  IPv4 addresses are four groups of numbers.  Each group is called an "octet".  
