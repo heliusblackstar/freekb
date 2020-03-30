@@ -148,7 +148,15 @@ These two addresses are on different networks:
 
         2001:db8:9a3:5124:9d08:358c:308a:decd/64
         2001:db8:9a3:5120:9d08:358c:308a:decd/64
-As an aside, it would also be exceedingly unlikely for two machines on different networks to autogenerate the same interface ID as above.
+As an aside, it would also be exceedingly unlikely for two machines on different networks to autogenerate the same interface ID as above.  With that said, RFC4291 section 2.5.1 states:
+>   Interface identifiers in IPv6 unicast addresses are used to identify
+   interfaces on a link.  They are required to be unique within a subnet
+   prefix.  It is recommended that the same interface identifier not be
+   assigned to different nodes on a link.  They may also be unique over
+   a broader scope.  In some cases, an interface's identifier will be
+   derived directly from that interface's link-layer address.  The same
+   interface identifier may be used on multiple interfaces on a single
+   node, as long as they are attached to different subnets.
 
 ## IPv6 address types
 ### Unicast
