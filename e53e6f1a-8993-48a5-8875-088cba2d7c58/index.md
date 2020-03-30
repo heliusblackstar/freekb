@@ -95,7 +95,7 @@ Manual/static configuration is also possible.  See [this article for an example 
 
 ## IPv6 address format
 IPv4 addresses are 32-bits.  IPv4 addresses are four groups of numbers.  Each group is called an "octet".  
-IPv6 addresses are 128-bits.  IPv6 addresses are eight groups of hexadecimals (0-9, a-f).  Unfortunately there is not yet consensus on what these groups that make up the address should be called.  Various terms exist: nibble, quartet, hextet, piece, chunk.  No matter what term you use, you can say an IPv6 address is made up of 8 chunks, pieces, nibbles, etc.  These terms all mean the same thing.
+IPv6 addresses are 128-bits.  IPv6 addresses are eight groups of hexadecimals (0-9, a-f).  Unfortunately there is not yet consensus on what these groups that make up the address should be called.  Various terms exist: quartet, hextet, piece, chunk.  No matter what term you use, you can say an IPv6 address is made up of 8 chunks, pieces, hextets, etc.  These terms all mean the same thing.
 
 In almost all cases, a node will be on a /64 network.  In other words, the prefix is the portion of the address which matches for all nodes on that network, and is the first 64 bits--the first half.  
 The second half is the interface ID and will be unique for every host on that link (on that prefix).  
