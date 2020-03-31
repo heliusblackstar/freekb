@@ -66,7 +66,7 @@ A single /64, has 2^64 (18,446,744,073,709,551,616) Global Unicast addresses.
 The Global Unicast addresses in use are visible from the device's OS (simple!), so seeing a device's "public" address does not involve having to cross-reference a device's private IP with a firewall public/private NAT configuration like in IPv4.
 
 ### Firewalls can be set to simply passthru incoming IPv6 traffic, allowing simple inbound connectivity for any apps or services without any extra signaling protocol or manual firewall configuration.
-This statement is very controversial and there is no consensus in the RFCs and IETF whether "default allow" or "default deny" is better.
+"Can be"...or not.  This statement is very controversial and there is no consensus in the RFCs and IETF whether "default allow" or "default deny" is better.
 
 Some ICMPv6 messages MUST ALWAYS be permitted thru a firewall in both directions (such as Echo Request, Echo Reply, Packet Too Big, etc) per RFC4890 section 4.2.1.    
 
