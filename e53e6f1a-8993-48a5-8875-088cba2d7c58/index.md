@@ -26,6 +26,14 @@ IPv6 solves both these two problems (lack of addresses and NAT).  IPv6 has plent
 
 Note, that firewalls still exist--you can still have firewall policies that allow or deny traffic, either on the device, or at the network perimeter.
 
+If you are at all uncomfortable with the thought of "losing NAT", RFC4864 was written specifically for you!  Here's an excerpt to entice you to read it:
+> These techniques, known collectively as Local Network
+   Protection (LNP), retain the concept of a well-defined boundary
+   between "inside" and "outside" the private network, while allowing
+   firewalling, topology hiding, and privacy.  LNP will achieve these
+   security goals without address translation while regaining the
+   ability for arbitrary any-to-any connectivity.
+
 ### Subnetting is gone!
 The standard prefix for all networks that contain nodes is a /64.  
 
