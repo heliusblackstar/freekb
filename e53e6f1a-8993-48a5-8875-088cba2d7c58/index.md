@@ -19,7 +19,7 @@ In this context, "MUST" means:
 
 Doesn't mean the OS needs to include a "ping" utility, just that it is required to respond to pings per the ICMPv6 standard (RFC4443 section 4.1), and that ping packets transiting a firewall "Must Not Be Dropped" (RFC4890 section 4.2.1).
 
-There is other types of traffic that MUST be allowed thru a firewall to a node, such as Packet Too Big ICMPv6 messages, as nodes are now responsible to fragment their own packets and do their own Path MTU Discovery.  Also IPsec packets
+There are other types of traffic that MUST be allowed thru a firewall to a node, such as Packet Too Big ICMPv6 messages, as nodes are now responsible to fragment their own packets and do their own Path MTU Discovery.
 
 ### NAT is eradicated!   
 NAT was not a security feature (RFC2775 section 3.4).  
