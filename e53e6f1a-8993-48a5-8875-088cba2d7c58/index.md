@@ -4,7 +4,7 @@
 IPv6 offers a publically routable address for every node, and introduces a variety of completely new concepts, mechanisms, things-that-must-be-true, and protocols.
 
 ## Estimated Time to Read
-12 minutes at 200 words per minute.
+15 minutes at 200 words per minute.
 
 ## Source materials
 If you read nothing further in this article, read this:  
@@ -18,6 +18,8 @@ In this context, "MUST" means:
 >This word, or the terms "REQUIRED" or "SHALL", mean that the definition is an absolute requirement of the specification." (RFC2119).
 
 Doesn't mean the OS needs to include a "ping" utility, just that it is required to respond to pings per the ICMPv6 standard (RFC4443 section 4.1), and that ping packets transiting a firewall "Must Not Be Dropped" (RFC4890 section 4.2.1).
+
+There is other types of traffic that MUST be allowed thru a firewall to a node, such as Packet Too Big ICMPv6 messages, as nodes are now responsible to fragment their own packets and do their own Path MTU Discovery.  Also IPsec packets
 
 ### NAT is eradicated!   
 NAT was not a security feature (RFC2775 section 3.4).  
@@ -63,13 +65,25 @@ Even home users are recommended to be assigned **at least** a /56, which is 256 
 A single /64, has 2^64 (18,446,744,073,709,551,616) Global Unicast addresses.
 The Global Unicast addresses in use are visible from the device's OS (simple!), so seeing a device's "public" address does not involve having to cross-reference a device's private IP with a firewall public/private NAT configuration like in IPv4.
 
-### Firewalls can be set to simply passthru incoming IPv6 traffic, allowing simple inbound connectivity for any apps or services without any extra signaling protocol or manual firewall configuration.  
-As the RFCs state, do not confuse "addressability" with "reachability".  
-To quote RFC7368:
+### Firewalls can be set to simply passthru incoming IPv6 traffic, allowing simple inbound connectivity for any apps or services without any extra signaling protocol or manual firewall configuration.
+This statement is very controversial and there is no consensus in the RFCs and IETF whether "default allow" or "default deny" is better.
+
+Some ICMPv6 messages MUST ALWAYS be permitted thru a firewall in both directions (such as Echo Request, Echo Reply, Packet Too Big, etc) per RFC4890 section 4.2.1.    
+
+For home users, it's important to give the user an easy way to toggle between generally allowing vs dropping inbound IPv6 connections, and an easy way to manually "make a pinhole firewall rule".  Support for PCP signaling so that applications can open their own access for end-to-end communications thru the firewall is also desirable.
+
+Ultimately, do not confuse "addressability" with "reachability".  
+To quote RFC7368 section 3.6.1 ("Addressability vs. Reachability")
 
         An IPv6-based home network architecture should embrace the transparent end-to-end communications model as described in [RFC2775].  Each device should be globally addressable, and those addresses must not be altered in transit.  However, security perimeters can be applied to restrict end-to-end communications, and thus while a host may be globally addressable, it may not be globally reachable.
         [...]
         whether devices are globally reachable or not would depend on any firewall or filtering configuration, and not, as is commonly the case with IPv4, the presence or use of NAT.  In this respect, IPv6 networks may or may not have filters applied at their borders to control such traffic, i.e., at the homenet CE router.  [RFC4864] and [RFC6092] discuss such filtering and the merits of 'default allow' against 'default deny' policies for external traffic initiated into a homenet.  This topic is discussed further in Section 3.6.1.
+
+And RFC4864 section 4.2:
+
+        IPv4 NAT was not developed as a security mechanism.  Despite marketing messages to the contrary, it is not a security mechanism, and hence it will offer some security holes while many people assume their network is secure due to the usage of NAT.  IPv6 security best practices will avoid this kind of illusory security, but can only address the same threats if correctly configured firewalls and IDSs are used at the perimeter.
+
+                It must be noted that even a firewall doesn't fully secure a network.  Many attacks come from inside or are at a layer higher than the firewall can protect against.  In the final analysis, every system has to be responsible for its own security, and every process running on a system has to be robust in the face of challenges like stack overflows, etc.  What a firewall does is prevent a network administration from having to carry unauthorized traffic, and in so doing reduce the probability of certain kinds of attacks across the protected boundary.
 
 ### Broadcast packets are gone!
 But not really.  It's just more formalized and with a new name--Multicast.  Multicast packets are "broadcast" packets, in that they are broadcasted to everyone in on the link (segment).  Multicast is a broadcast intended for "any nodes listening to traffic sent to a specific multicast group address".  Multicast is used all over the place, such as for Neighbor Discovery, Router Advertisements, etc.  
