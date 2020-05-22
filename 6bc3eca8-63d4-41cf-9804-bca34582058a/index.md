@@ -7,9 +7,9 @@ You can easily deploy the [Pi-hole](https://pi-hole.net/) software into a Debian
 1. Setup a static IPv4 and static [IPv6 address](../78aa9176-0efe-4590-9d61-d2f6bb9bf591/index.md) on your server.
 1. Switch to root and install Docker: `sudo su -; apt install docker-compose docker`
 1. Create your docker-compose file: `mkdir pihole; cd pihole; nano docker-compose.yml` and paste the "Docker-compose example" from https://hub.docker.com/r/pihole/pihole/ .  The verbiage in the docker-compose.yml file ensures that Docker will always start this container automatically when your server reboots.
-1. This step will take some time to run.:  `docker-compose up -d`
+1. This step will take some time to run:  `docker-compose up -d`
 1. Confirm it is working by quering Pi-hole over IPv6 local loopback: `nslookup google.com ::1`
-1. You can access the admin interface at `http://[IP6-address-of-your-server]/admin` .  Password will have been randomly set and can be seen by running `docker logs pihole | grep random` .  Record this in your password manager.
+1. You can access the admin interface at `http://[IPv6-address-of-your-server]/admin` .  Password will have been randomly set and can be seen by running `docker logs pihole | grep random` .  Record this in your password manager.
 1. In your network's DHCP server, remove all existing DNS servers and configure the IPv4 address and IPv6 address of your Pi-hole server as your DNS server.
 
 ## Upgrading Pi-hole
