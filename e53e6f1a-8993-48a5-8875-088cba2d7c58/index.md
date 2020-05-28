@@ -49,7 +49,7 @@ The only two valid prefix lengths for networks which contain nodes are a /64 and
 We represent the size of a prefix by describing how many of the first bits in an address are part of the prefix.  Nodes are almost always in a network that has a 64 bit prefix, and so we would append "/64" to the address to indicate this when necessary.  This is similiar to IPv4 CIDR notation ("192.168.1.0/24" meaning the first 24 bits of the address are the network portion).
 
 ### Addresses are written in hexadecimal
-The lowest hex digit is 0.  Then 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, a, b, c, e, f.  "2601" is lower than "fe80".  All the numbers come first, then all the letters.
+The lowest hex digit is 0.  The order is 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, a, b, c, d, e, f.  "2601" is lower than "fe80".  All the numbers come first, then all the letters.
 
 ### The IPv6 address space is mind-bogglingly expansive
 To oversimply it, the size of the IPv4 address space is 2^32.  
