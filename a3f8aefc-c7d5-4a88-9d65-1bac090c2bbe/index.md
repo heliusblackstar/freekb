@@ -33,10 +33,10 @@ There are new commands to see neighbors and routes in IPv6.  In IPv4 ARP was a p
         Internet Address                              Physical Address   Type
         --------------------------------------------  -----------------  -----------
         2001:db8::501                                 8e-d5-65-35-38-6b  Stale
-        2001:db8:::2e0:67ff:fe1f:26c9                 00-e0-67-1f-26-c9  Reachable (Router)
-        2001:db8:::4045:4dff:fecc:bae2                42-45-4d-cc-ba-e2  Stale
-        2001:db8:::8c0c:95ff:fec3:c624                8e-0c-95-c3-c6-24  Stale
-        2001:db8:::dea6:32ff:fe17:f63f                dc-a6-32-17-f6-3f  Stale
+        2001:db8::2e0:67ff:fe1f:26c9                 00-e0-67-1f-26-c9  Reachable (Router)
+        2001:db8::4045:4dff:fecc:bae2                42-45-4d-cc-ba-e2  Stale
+        2001:db8::8c0c:95ff:fec3:c624                8e-0c-95-c3-c6-24  Stale
+        2001:db8::dea6:32ff:fe17:f63f                dc-a6-32-17-f6-3f  Stale
         fe80::1:1                                     00-e0-67-1f-26-c9  Reachable (Router)
         fe80::4045:4dff:fecc:bae2                     42-45-4d-cc-ba-e2  Stale
         fe80::8c0c:95ff:fec3:c624                     8e-0c-95-c3-c6-24  Stale
