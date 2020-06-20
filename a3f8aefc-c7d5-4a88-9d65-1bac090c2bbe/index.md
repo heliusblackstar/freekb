@@ -4,7 +4,7 @@
 There are new commands to see neighbors and routes in IPv6.  In IPv4 ARP was a protocol that mapped Layer 3 (IP) to Layer 2 (MAC).  In IPv6 Neighbor Discovery is used.  
 
 ## Steps
-### Show the ARP table / Neighbor table
+### Show the ARP table (IPv4) / Neighbor Discovery table (IPv6)
 #### Linux
 `ip neighbor`.  This shows both IPv4 and IPv6 information.
 
@@ -18,14 +18,14 @@ There are new commands to see neighbors and routes in IPv6.  In IPv4 ARP was a p
         2001:db8::8c0c:95ff:fec3:c624 dev eth0 lladdr 8e:0c:95:c3:c6:24 STALE
 
 #### Windows
-`arp -a` to see v4 ARP table: 
+`arp -a` to see IPv4 ARP table: 
 
         Interface: 192.0.2.195 --- 0xb
         Internet Address      Physical Address      Type
         192.0.2.1           00-e0-67-1f-26-c9     dynamic
         192.0.2.18          f2-d5-f2-bd-bd-5b     dynamic
 
-`netsh interface ipv6 show neighbors` to show IPv6 neighbors:
+`netsh interface ipv6 show neighbors` to show IPv6 Neighbor Discovery table:
 
         Interface 11: Ethernet
 
