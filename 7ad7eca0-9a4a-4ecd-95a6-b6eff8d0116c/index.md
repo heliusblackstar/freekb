@@ -36,8 +36,11 @@ To help distinguish articles that should NEVER be made public, it is suggested t
         private-18502467-9937-4621-a676-c06ffcaed651
         private-eb70adef-1bea-42c9-81c1-268fa69a46b8
         private-421abab4-b8c9-41a3-a88e-8ad3daff176e
-        a56b4299-46aa-43fc-8311-2214e311b8de
-        983f7be6-21a8-4c13-bccb-e5e5d196521a
+        41e45de3-25bf-4b06-87d6-2f74b6bbd848
+        6450d106-8045-449b-9bf8-9ad23db8d714
+        8917ef97-878d-47d5-9d64-fb7e69a44dbb
+        ff8eefe9-3d87-4cb6-94e4-7ef1fa9d24d0
+        24afd842-efe3-49c2-884f-e54e4415bc1c
 
 Since the branch won't ever be pushed to a public place, the public would never see any article titles with this private prefix.  Additionally, the prefix violates the Style Rules, so it wouldn't be approved for merging into master in the original instance of FreeKB anyway).  This "private-" prefix in your branch name and folder names will help everyone who uses any instance of FreeKB identify articles that should not be made public.
 
