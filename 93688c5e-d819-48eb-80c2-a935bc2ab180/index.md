@@ -18,7 +18,7 @@ Moving applications to a different virtual desktop:
 - We can transfer applications from one virtual desktop to another.  One way is to right-click an application's thumbnail in Task View and choose from the available options:  
 ![task view right click menu](task_view_right_click_menu.png)
 
-- Another way is to drag and drop the application thumbnail directly to the virtual desktopt thumbnail:  
+- Another way is to drag and drop the application thumbnail directly to the virtual desktop thumbnail:  
 ![drag and drop application to a different desktop](task_view_drag_and_drop.png)
 
 ### Switching between virtual desktops
