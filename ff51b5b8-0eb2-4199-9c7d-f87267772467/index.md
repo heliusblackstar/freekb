@@ -18,9 +18,9 @@ This allows you to still use KeePass normally, but upon becoming idle for a time
 
 1. Click `OK`, `Finish`, `OK`.
 
-Effective immediately, 10 minutes after opening/unlocking your KeePass file, KeePass will search for your Favorites and show only your Favorite entries (which can be across multiple folders).  You can still click any folder to go back to simply browsing your KeePass file, or use the Search to search as normal.
+Effective immediately, after any 10 minutes of inactivity, KeePass will show simply your Favorite entries (which can be across multiple folders), giving you quick access to your most used entries.  You can still click any folder to go back to simply browsing your KeePass file, or use the Search to search as normal.
 
-After any 10 minutes of inactivity, KeePass will again show simply your Favorites, giving you quick access to your most used entries.
+The next time you re-open/unlock KeePass, you will see all your entries, but after 10 minutes of inactivity, you will see your Favorites.  You can add an additional `Event` to the trigger if you want your favorites shown immediately after opening your database.
 
 KeePass also keeps track of any defined tags in your file, and you can quickly search for already defined tags using the Find Entries button, located next to the Search box:
 
