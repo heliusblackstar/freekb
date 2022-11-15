@@ -12,7 +12,7 @@ Writing a new article is as simple as copying the template article stored under 
 ### Filing system
 - Folders are named simply with a random UUID (UUID v4).  Never change the UUID of any folders (this would break hyperlinks).  All articles are named "index.md". 
 - Your article title goes in the first line of your article (see template).  Only your article title should use the Heading Level 1 (#).
-- All images referenced by your article should be stored in your article's folder as .PNG files (not .JPG).  PNG files are small and loss-less.  Use descriptive alt text in your article to assist users working with the raw Markdown.
+- All images referenced by your article should be stored in your article's folder as .PNG files (not .JPG).  PNG files are small and lossless.  Using PNG for images allows the images to be edited one or more times in the future without any loss of quality.  Use descriptive alt text in your article to assist users working with the raw Markdown.
 - Always use relative references (such as to images and other articles).  [Example relative hyperlink to TEMPLATE article](../4b857b00-8bd4-4606-9ed6-be6f751ddfe7/index.md).
 - If you see an image in another article you'd like to use, copy it into your article's directory first.  This is necessary as the other article may eventually modify/delete their copy of the image, or the other article may be removed entirely in the future.  Making a "local copy" in your article directory preserves the image for the lifetime of your article.
 
@@ -54,7 +54,7 @@ If your article will contain sensitive information you don't want to put into th
 
 ## Privacy for your name or email address
 Before you `git commit`, [ensure your configuration name and email address are what you want to show in your commits](../05771c30-f03e-4dbb-8aee-ea0c57545626/index.md).
-    
+
 
 *** 
 _Mandatory_page_footer: This article and the rest of the [FreeKB](../README.md) is dedicated to the public domain via the [Creative Commons CC0](../LICENSE.md)._

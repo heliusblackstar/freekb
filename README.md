@@ -12,7 +12,7 @@ FreeKB is a knowledge base for technical topics.  All content is in the public d
 - **Powerful search is already in your OS and editor/IDE**, no need to re-invent search tools.
 - **Hyperlinks between articles should NEVER be broken**.  To ensure this, we give each article its own folder, not based on an article title (which may change), but on a UUID (example: 71dbb5b0-c3f6-4784-9d66-bde0cc64616d), which is dedicated to that article.
     - All articles are named "index.md", and the actual article title is in the plain-text of the article, on the first line.  This ensures the filename never changes, even if the article title changes (and thus hyperlinks are permanent and never break), and also provides ease-of-use for any scripts or programs built on top of FreeKB.
-- Any images used by an article are stored in the same directory as the article, in loss-less PNG format.  Modern PNG is both small and loss-less.  Embedded images is a feature of Markdown, so any Markdown viewer will display an image if we insert a simple statement like the following code example:
+- Any images used by an article are stored in the same directory as the article, in lossless PNG format.  Modern PNG is both small and lossless.  Using PNG for images allows the images to be edited one or more times in the future without any loss of quality.  Embedded images is a feature of Markdown, so any Markdown viewer will display an image if we insert a simple statement like the following code example:
 
         ![Example image](widget.PNG)
     
