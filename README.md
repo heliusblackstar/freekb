@@ -83,7 +83,7 @@ Want a page that links to each article and shows a title and summary?
 
 ### Suggested Markdown Editors/Viewers:
 The benefit of Markdown is that you can edit and view it via any plain-text editor, but to see images inline and for a better experience, you can try an editor with CommonMark Markdown support:
-- [Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown) is excellent, has built-in Preview and also supports full-text searching when you use Open Folder.
+- [Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown) is excellent, has built-in Preview and also supports full-text searching when you use Open Folder.  [You can also use Visual Studio Code for the Web (vscode.dev) purely thru your browser to edit files/folders on your device.](https://vscode.dev)
 - [Other editors are listed here.](https://github.com/commonmark/commonmark-spec/wiki/Applications-supporting-CommonMark)
 
 ## Contributing
