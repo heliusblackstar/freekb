@@ -32,17 +32,16 @@ Note that there is a difference between clicking the button, and clicking and ho
 
 Shortcuts we know so far:
 
-(From) OFF --> 1C = Turn on with last used brightness level
+**(From) OFF --> 1C = Turn on with last used brightness level**
 
-(From) ON --> 1C = Turn off
+**(From) ON --> 1C = Turn off**
 
 ## Lesson 2: From off, directly accessing low mode
 Turn off the light with 1C.  First, let's show you how to turn on the light in the lowest brightness level, often called moonlight level.  We know that 1C will turn on the light at the last used brightness setting, so now we will learn about 1H, which is to click the button once, and hold it down.  After 1 second, the light will turn on in the lowest brightness mode, and we can release the button.  Try turning off the light with 1C and turning it back on in low with 1H a few times to get a feel for this.  You may want to aim the flashlight at your hand so you can better see the light coming out of it.  Try to avoid pointing it right at your face--if you end up going into a high (brightness) level, you won't be able to see for some time.
 
-Shortcuts we know so far:
-
-OFF --> 1C = Turn on
-OFF --> 1H = Low mode
+Shortcuts we know so far:  
+OFF --> 1C = Turn on  
+**OFF --> 1H = Low mode** 
 
 ON --> 1C = Turn off
 
@@ -57,12 +56,11 @@ We can also go to a "momentary high", such as if we want the highest brightness 
 But now we have two options for accessing high, and one for accessing low.
 
 
-Shortcuts we know so far:
-
-OFF --> 1C = Turn on with last used brightness level
-OFF --> 1H = Low mode
-OFF --> 2C = High mode
-OFF --> 2H = Momentary high mode
+Shortcuts we know so far:  
+OFF --> 1C = Turn on with last used brightness level  
+OFF --> 1H = Low mode  
+**OFF --> 2C = High mode**  
+**OFF --> 2H = Momentary high mode**  
 
 ON --> 1C = Turn off
 
@@ -77,17 +75,24 @@ Let's do 1C to turn the light on at the last used brightness level.  We should n
 
 Try this a few times, holding down the button to see the light get brighter, then release at some point and within 1 second hold down the button again to go the other way.  
 
+So while the light is on, you are on the brightness ramp.  You can jump from anyplace on the brightness ramp all the way up to high instantly with 2C.  Clicking 2C again will drop you back down to where you were, or you can decrease brightness with 1H.
+
+There is another way to decrease brightness.  It's up to you if you want to use the 1H to increase then release and 1H to decrease method.  You can also use 1H to increase, or 2H to decrease.  2H would be two clicks, and hold the second click.  Try these both out and see which one you prefer.
+
 Anduril has options for how it's brightness memory works, as well as how fast the light ramps up/down, and whether it is stepped or smooth, if it's stepped then how many steps, but we don't need to understand how to modify these things right now.
 
-Shortcuts we know so far:
 
-OFF --> 1C = Turn on with last used brightness level
-OFF --> 1H = Low mode
-OFF --> 2C = High mode
-OFF --> 2H = Momentary high mode
 
-ON --> 1C = Turn off
+Shortcuts we know so far:  
+OFF --> 1C = Turn on with last used brightness level  
+OFF --> 1H = Low mode  
+OFF --> 2C = High mode  
+OFF --> 2H = Momentary high mode  
 
+ON --> 1C = Turn off  
+**ON --> 1H = Increase brightness.  Release and 1H again within 1 second to decrease brightness**  
+**ON --> 2H = Decrease brightness.**  
+**ON --> 2C = Goto ceiling.  2C will return you to previous level.  1H will decrease brightness.**
 
 ## Lesson 5: Checking the battery level
 Anduril has the built-in ability to tell us the voltage of the battery.  A fully charged battery will have about 4.2 volts.  A half full one is about 3.6 volts, and at 2.5 to 3.0 volts the battery is completely dead, the user should stop discharging the battery and the battery should be charged.  Anduril includes low voltage protection, so if your battery is drained to about 2.9 volts, Anduril will stop discharging the battery and turn off and stay off.  Though it depends on which exact lithium ion cell you are using, generally the cell needs to always be above 2.5 to 3.0 volts to maintain it's internal integrity.  Lithium ion batteries with a nominal voltage of 3.6 volts that get discharged below 2.5 volts will suffer, and may lose enough internal integrity to become unsafe.
@@ -101,6 +106,23 @@ The first time you do 3C, just try to get a feel for the flashing pattern. When 
 
 Try 3C a few times until you feel confident about reading your batteries voltage.  You can try this over the course of the first day with your light to watch the slow decrease in voltage.  It's helpful to know the voltage of the cell, so that you know when to charge, and how much energy you have left.
 
+Shortcuts we know so far:  
+Adjusting brightness:
+OFF --> 1C = Turn on with last used brightness level  
+OFF --> 1H = Low mode  
+OFF --> 2C = High mode  
+OFF --> 2H = Momentary high mode  
+
+Utility stuff:  
+**OFF --> 3C = Battery voltage check.  Does 1x then turns off if in Simple UI, will repeat endlessly on Advanced UI.**  
+
+Adjusting brightness:
+ON --> 1C = Turn off  
+ON --> 1H = Increase brightness.  Release and 1H again within 1 second to decrease brightness.  
+ON --> 2H = Decrease brightness.  
+ON --> 2C = Goto ceiling.  2C will return you to previous level.  1H will decrease brightness.
+
+
 ## Lesson 6: Post off voltage display
 This presumes your light has either auxiliary LEDs, or an RBG backlight under the button.  To tell, turn the light on, then off.  If immediately after turning off your light, for about 4 seconds you see a color (most likely it will be blue or green) coming from underneath your button or from tiny LEDs at the front of the light, then you have one or both of these.
 
@@ -113,17 +135,50 @@ If neither of these happen, as in, after turning on the light with 1C and then o
 Some lights, in addition to the (RGB) post off voltage display and the off-->3C battery voltage flash pattern will also keep the RBG button backlight on while the light is ON.  In this case you can see the battery voltage via colors even when the light is on, in realtime.
 
 ## Lockout mode:
-TODO
+Lockout mode is a mode you might want to put the light in if you think a kid might try to use the light, or you don't want the light to turn on, such as in a bag.  If you can tailcap lockout, that would be easier, but you can also use lockout mode if you prefer.
+
+Entering lockout mode is the same shortcut as exiting lockout mode.  With the light off, try 4C.  The light will probably enter into some sort of flashing pattern.  What that pattern is, depends on your lockout mode configuration, which we don't need to worry about messing with right now.
+
+You'll notice that 1C, 2C, 1H and 2H no longer do very much, they only turn the light on low momentarily.  As soon as you release the button, the light turns off.  This is lockout mode.  
+
+To exit lockout mode, there's two ways.  Well, three.
+Option 1 - Loosen the tailcap to turn off the light, then tighten it.
+Option 2 - Press 3C to exit lockout mode and leave the light OFF.
+Option 3 - Press 4C to exit lockout mode and turn the light ON.  The light sees this as 3C to exit lockout mode, followed by a 1C to turn the light back on at the last used brightness setting on the brightness ramp.  
+
+Which option is easier for you to remember is up to you.  For now, we'll just include Option 3 in the below shortcut list.
+
+
+Shortcuts we know so far:  
+Adjusting brightness:  
+OFF --> 1C = Turn on with last used brightness level  
+OFF --> 1H = Low mode  
+OFF --> 2C = High mode  
+OFF --> 2H = Momentary high mode  
+
+Utility stuff:
+OFF --> 3C = Battery voltage check.  Does 1x then turns off if in Simple UI, will repeat endlessly on Advanced UI.  
+**OFF --> 4C = Enter lockout mode.**
+
+Lockout mode:  
+**LOCKOUT --> 4C = Exit lockout mode.**
+
+Adjusting brightness:  
+ON --> 1C = Turn off  
+ON --> 1H = Increase brightness.  Release and 1H again within 1 second to decrease brightness.  
+ON --> 2H = Decrease brightness.  
+ON --> 2C = Goto ceiling.  2C will return you to previous level.  1H will decrease brightness.
 
 ## Multi-channel lights
-TODO
+Some lights have multiple channels.  For example, a light might have a floody emitter, a red light emitter, and a green emitter.  In channel config menu, you can configure which combinations you want of these emitters, enabling and disabling various combinations.  
 
-## Switching to Advanced UI
-TODO
+For now, we can simply cycle through the possibilities, presuming the light is in instant channel switching mode, by pressing from ON --> 3C.  This will instant channel switch to the next channel.  The light will remember the last used channel and brightness when you turn it off. 
 
-## Link to Anduril manual?
+At this point, our shortcut list is becoming quite long, and it would make sense for you to transition to either the [Anduril manual's UI reference tables](https://github.com/containerfan/anduril2-diagrams?tab=readme-ov-file), or the [Anduril diagrams](https://github.com/containerfan/anduril2-diagrams).  You might find the Anduril diagram is sufficient as a quick reference and you only need to dive into the manual for changing configuration settings.
 
-## Transition to Anduril diagram/manual
+Try taking a look at the Anduril diagram.  Look for the "OFF" and "ON" circle, and identify the shortcuts you already know.  Start with the Simple UI diagram--the Advanced UI diagram will feel absurdly complicated to a beginner as it has a lot of distracting things on it.
+
+That's it!  You know enough to use your light and with the diagrams and manual you can learn more as you are ready.
 
 *** 
 _Mandatory_page_footer: This article and the rest of the [FreeKB](../README.md) is dedicated to the public domain via the [Creative Commons CC0](../LICENSE.md)._
