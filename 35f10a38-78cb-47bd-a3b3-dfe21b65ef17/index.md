@@ -156,7 +156,7 @@ OFF --> 1H = Low mode
 OFF --> 2C = High mode  
 OFF --> 2H = Momentary high mode  
 
-Utility stuff:
+Utility stuff:  
 OFF --> 3C = Battery voltage check.  Does 1x then turns off if in Simple UI, will repeat endlessly on Advanced UI.  
 **OFF --> 4C = Enter lockout mode.**
 
@@ -174,9 +174,11 @@ Some lights have multiple channels.  For example, a light might have a floody em
 
 For now, we can simply cycle through the possibilities, presuming the light is in instant channel switching mode, by pressing from ON --> 3C.  This will instant channel switch to the next channel.  The light will remember the last used channel and brightness when you turn it off. 
 
-At this point, our shortcut list is becoming quite long, and it would make sense for you to transition to either the [Anduril manual's UI reference tables](https://github.com/containerfan/anduril2-diagrams?tab=readme-ov-file), or the [Anduril diagrams](https://github.com/containerfan/anduril2-diagrams).  You might find the Anduril diagram is sufficient as a quick reference and you only need to dive into the manual for changing configuration settings.
+## Handoff to manual & diagram
 
-Try taking a look at the Anduril diagram.  Look for the "OFF" and "ON" circle, and identify the shortcuts you already know.  Start with the Simple UI diagram--the Advanced UI diagram will feel absurdly complicated to a beginner as it has a lot of distracting things on it.
+At this point, our shortcut list is becoming a bit long, and it would make sense for you to transition to either the [Anduril manual's UI reference tables](https://github.com/ToyKeeper/anduril/blob/trunk/docs/anduril-manual.md#ui-reference-table), or the [Anduril diagrams](https://github.com/containerfan/anduril2-diagrams).  You might find the Anduril diagram is sufficient as a quick reference and you only need to dive into the manual for changing configuration settings.
+
+Try taking a look at the Anduril diagram, the Simple UI one.  Look for the "OFF" and "ON" circle, and identify the shortcuts you already know.  Start with the Simple UI diagram--the Advanced UI diagram will feel absurdly complicated to a beginner as it has a lot of distracting things on it.
 
 That's it!  You know enough to use your light and with the diagrams and manual you can learn more as you are ready.
 
