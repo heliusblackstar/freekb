@@ -141,9 +141,9 @@ Entering lockout mode is the same shortcut as exiting lockout mode.  With the li
 
 You'll notice that 1C, 2C, 1H and 2H no longer do very much, they only turn the light on low momentarily.  As soon as you release the button, the light turns off.  This is lockout mode.  
 
-To exit lockout mode, there's two ways.  Well, three.
-Option 1 - Loosen the tailcap to turn off the light, then tighten it.
-Option 2 - Press 3C to exit lockout mode and leave the light OFF.
+To exit lockout mode, there's two ways.  Well, three.  
+Option 1 - Loosen the tailcap to turn off the light, then tighten it.  
+Option 2 - Press 3C to exit lockout mode and leave the light OFF.  
 Option 3 - Press 4C to exit lockout mode and turn the light ON.  The light sees this as 3C to exit lockout mode, followed by a 1C to turn the light back on at the last used brightness setting on the brightness ramp.  
 
 Which option is easier for you to remember is up to you.  For now, we'll just include Option 3 in the below shortcut list.
