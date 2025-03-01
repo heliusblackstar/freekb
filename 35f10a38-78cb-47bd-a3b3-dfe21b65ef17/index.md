@@ -7,7 +7,7 @@ Anduril 2 (commonly simply called Anduril now) is a user configurable and powerf
 Before you begin, it's a good idea to factory reset your light.  This will ensure all configuration settings are back to defaults, and will put the light back in Simple UI or Extended Simple UI.  To do this, turn on the light by clicking the button.  Now unscrew the tailcap a half turn.  Most lights will turn off right away.  If the light goes out, you are ready to proceed.  This also means you are in "tailcap lockout" which means the light cannot be turned on accidentally (nor on purpose), and it will consume absolutely zero power.  
 Very few lights, as in, those without anodized threads will remain on with the tailcap unscrewed a half turn.  For those, if the light is still on, keep unscrewing the tailcap until the light goes off.
 
-For clarity, we don't necessarily need to turn the light on to start a factory reset, but turning it on let's us understand how far we need to unscrew the tailcap to cut the power, and we do need the light to be off and the tailcap locked out to start a factory reset.
+For clarity, we don't necessarily need to turn the light on to start a factory reset, but turning it on lets us understand how far we need to unscrew the tailcap to cut the power, and we do need the light to be off and the tailcap locked out to start a factory reset.
 
 Now with the light off, hold down the button.  Hold it.  Screw the tailcap all the way back on.  You will see the light get brighter and brighter, while probably flashing a bit.  The brightening is a confirmation delay, in case you do not wish to actually factory reset.  Keep holding the button as we want to continue and do a factory reset.  The light will reach full brightness and then go completely dark.  You can now release the button.
 
@@ -30,8 +30,22 @@ To turn the light on/off, simply click the button.  The light will turn on at th
 
 Note that there is a difference between clicking the button, and clicking and holding.  For example, to turn on the light, you would do what Anduril calls a "1C".  Meaning 1 click of the button.  Try 1C.
 
+Shortcuts we know so far:
+
+(From) OFF --> 1C = Turn on with last used brightness level
+
+(From) ON --> 1C = Turn off
+
 ## Lesson 2: From off, directly accessing low mode
 Turn off the light with 1C.  First, let's show you how to turn on the light in the lowest brightness level, often called moonlight level.  We know that 1C will turn on the light at the last used brightness setting, so now we will learn about 1H, which is to click the button once, and hold it down.  After 1 second, the light will turn on in the lowest brightness mode, and we can release the button.  Try turning off the light with 1C and turning it back on in low with 1H a few times to get a feel for this.  You may want to aim the flashlight at your hand so you can better see the light coming out of it.  Try to avoid pointing it right at your face--if you end up going into a high (brightness) level, you won't be able to see for some time.
+
+Shortcuts we know so far:
+
+OFF --> 1C = Turn on
+OFF --> 1H = Low mode
+
+ON --> 1C = Turn off
+
 
 ## Lesson 3: From off, directly accessing the highest brightness mode
 For now we are going to gloss over the difference between "ceiling" and "turbo", by simply saying we are going to "turn the light on high".
@@ -41,6 +55,16 @@ With the light off, to directly go to high, do a 2C.  This is two clicks.  Don't
 We can also go to a "momentary high", such as if we want the highest brightness for only a few seconds, and we want to simply hold down the button as long as we need the light, and upon release the light will auto-turn off.  To access momentary high, do a 2H.  You will see that as soon as you stop holding the button, the light turns off.  We can see this is different than turning the light onto high with 2C.
 
 But now we have two options for accessing high, and one for accessing low.
+
+
+Shortcuts we know so far:
+
+OFF --> 1C = Turn on with last used brightness level
+OFF --> 1H = Low mode
+OFF --> 2C = High mode
+OFF --> 2H = Momentary high mode
+
+ON --> 1C = Turn off
 
 But what about something in the middle?
 
@@ -54,6 +78,16 @@ Let's do 1C to turn the light on at the last used brightness level.  We should n
 Try this a few times, holding down the button to see the light get brighter, then release at some point and within 1 second hold down the button again to go the other way.  
 
 Anduril has options for how it's brightness memory works, as well as how fast the light ramps up/down, and whether it is stepped or smooth, if it's stepped then how many steps, but we don't need to understand how to modify these things right now.
+
+Shortcuts we know so far:
+
+OFF --> 1C = Turn on with last used brightness level
+OFF --> 1H = Low mode
+OFF --> 2C = High mode
+OFF --> 2H = Momentary high mode
+
+ON --> 1C = Turn off
+
 
 ## Lesson 5: Checking the battery level
 Anduril has the built-in ability to tell us the voltage of the battery.  A fully charged battery will have about 4.2 volts.  A half full one is about 3.6 volts, and at 2.5 to 3.0 volts the battery is completely dead, the user should stop discharging the battery and the battery should be charged.  Anduril includes low voltage protection, so if your battery is drained to about 2.9 volts, Anduril will stop discharging the battery and turn off and stay off.  Though it depends on which exact lithium ion cell you are using, generally the cell needs to always be above 2.5 to 3.0 volts to maintain it's internal integrity.  Lithium ion batteries with a nominal voltage of 3.6 volts that get discharged below 2.5 volts will suffer, and may lose enough internal integrity to become unsafe.
@@ -86,6 +120,10 @@ TODO
 
 ## Switching to Advanced UI
 TODO
+
+## Link to Anduril manual?
+
+## Transition to Anduril diagram/manual
 
 *** 
 _Mandatory_page_footer: This article and the rest of the [FreeKB](../README.md) is dedicated to the public domain via the [Creative Commons CC0](../LICENSE.md)._
