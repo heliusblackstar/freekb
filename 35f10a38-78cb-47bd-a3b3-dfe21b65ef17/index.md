@@ -4,10 +4,12 @@
 Anduril 2 (commonly simply called Anduril now) is a user configurable and powerful firmware for flashlights.  Anduril has a great many features, but you do not need to understand most of what it is capable of to simply use the most common features of the flashlight.
 
 ## Factory reset before you begin
-Before you begin, it's a good idea to factory reset your light.  This will ensure all configuration settings are back to defaults, and will put the light back in Simple UI or Extended Simple UI.  To do this, turn on the light by clicking the button.  Now unscrew the tailcap a half turn.  Most lights will turn off right away.  If the light goes out, you are ready to proceed.  This also means you are in "tailcap lockout" which means the light cannot be turned on accidentally, and it will consume absolutely zero power.  
+Before you begin, it's a good idea to factory reset your light.  This will ensure all configuration settings are back to defaults, and will put the light back in Simple UI or Extended Simple UI.  To do this, turn on the light by clicking the button.  Now unscrew the tailcap a half turn.  Most lights will turn off right away.  If the light goes out, you are ready to proceed.  This also means you are in "tailcap lockout" which means the light cannot be turned on accidentally (nor on purpose), and it will consume absolutely zero power.  
 Very few lights, as in, those without anodized threads will remain on with the tailcap unscrewed a half turn.  For those, if the light is still on, keep unscrewing the tailcap until the light goes off.
 
-Now with the light off, hold down the button.  Hold it.  Screw the tailcap all the way back on.  You will see the light get brighter and brighter, while probably flashing a bit.  The brightening is a confirmation delay, in case you do not wish to actually factory reset.  Keep holding the button as we want to continue with the factory reset.  The light will reach full brightness and then go completely dark.  You can now release the button.
+For clarity, we don't necessarily need to turn the light on to start a factory reset, but turning it on let's us understand how far we need to unscrew the tailcap to cut the power, and we do need the light to be off and the tailcap locked out to start a factory reset.
+
+Now with the light off, hold down the button.  Hold it.  Screw the tailcap all the way back on.  You will see the light get brighter and brighter, while probably flashing a bit.  The brightening is a confirmation delay, in case you do not wish to actually factory reset.  Keep holding the button as we want to continue and do a factory reset.  The light will reach full brightness and then go completely dark.  You can now release the button.
 
 The light is now factory reset and is in Simple UI or Extended Simple UI.
 
@@ -21,7 +23,7 @@ Later we'll switch to Advanced UI so we can learn how to change the behavior of 
 For now, there's a lot we can do with the light in Simple UI, and all of these things we're going to learn carry over verbatim into Advanced UI.  Advanced UI just adds lot of config menus and the other stuff we mentioned a minute ago.
 
 ## How to fix the light if it's doing weird things
-Before we get started, you should know that no matter what "mode" the light is in, most of Anduril's configuration menus are hidden away behind 6 or 7 consecutive clicks.  Clicking 3 or fewer times is almost always safe, as far as staying out of config menus.  However, if you accidentally click the button 6 or more times and aren't sure what the light is doing, it won't turn off or turn back on, or is flashing a weird pattern, which will be true if you find yourself in any of the configuration menus, just unscrew the tailcap until the light turns off.  Then screw it back on, and you should be in OFF mode.  If things are still messed up, do a factory reset.
+Before we get started, you should know that no matter what "mode" the light is in, most of Anduril's configuration menus are hidden away behind 6 or 7 consecutive clicks.  Clicking 3 or fewer times is almost always safe, as far as staying out of config menus.  However, if you accidentally click the button 6 or more times and aren't sure what the light is doing, if it won't turn off or turn back on, or is flashing a weird pattern, which will be true if you find yourself in any of the configuration menus, just unscrew the tailcap until the light turns off.  Then screw it back on, and you should be in OFF mode.  If things are still messed up, do a factory reset.
 
 ## Lesson 1: Turning on/off the light
 To turn the light on/off, simply click the button.  The light will turn on at the last used brightness setting, which we will get into in a moment.
